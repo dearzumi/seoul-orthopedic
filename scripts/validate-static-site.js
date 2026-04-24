@@ -16,10 +16,19 @@ const requiredSnippets = [
   '<meta property="og:url" content="https://seoul-orthopedic.vercel.app/" />',
   'href="./styles.css"',
   'id="services"',
+  'id="hours"',
+  'id="doctor"',
+  'id="facilities"',
   'id="location"',
+  'id="parking"',
+  'id="faq"',
   'id="contact"',
   'https://naver.me/Ffs07ccV',
   'https://map.kakao.com/link/search/',
+  'https://blog.naver.com/prf42',
+  'https://www.youtube.com/@prf4245',
+  'tel:0555458275',
+  'application/ld+json',
 ];
 
 for (const snippet of requiredSnippets) {

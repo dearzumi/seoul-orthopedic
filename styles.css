@@ -22,6 +22,7 @@ html {
 
 body {
   margin: 0;
+  padding-bottom: 0;
   font-family:
     Pretendard,
     "Noto Sans KR",
@@ -191,6 +192,12 @@ h3 {
   background: white;
 }
 
+.button.ghost {
+  color: var(--primary-dark);
+  border-color: rgba(23, 107, 135, 0.18);
+  background: rgba(255, 255, 255, 0.78);
+}
+
 .hero-card {
   display: grid;
   gap: 16px;
@@ -257,6 +264,49 @@ h3 {
   text-transform: uppercase;
 }
 
+.notice-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  max-width: 1180px;
+  margin: 18px auto 0;
+  padding: 0 clamp(20px, 5vw, 0px);
+}
+
+.notice-strip div {
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  background: white;
+}
+
+.notice-strip div:first-child {
+  border-radius: 24px 0 0 24px;
+}
+
+.notice-strip div:last-child {
+  border-radius: 0 24px 24px 0;
+}
+
+.notice-strip strong,
+.notice-strip span,
+.notice-strip a {
+  display: block;
+}
+
+.notice-strip strong {
+  color: var(--primary-dark);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.notice-strip span,
+.notice-strip a {
+  margin-top: 4px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
 .section {
   max-width: 1180px;
   margin: 0 auto;
@@ -302,6 +352,200 @@ h3 {
 }
 
 .service-card p {
+  color: var(--muted);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.notice-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  max-width: 1180px;
+  margin: 28px auto 0;
+  padding: 0 clamp(20px, 5vw, 0px);
+}
+
+.notice-strip div {
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  background: white;
+}
+
+.notice-strip strong,
+.notice-strip a,
+.notice-strip span {
+  display: block;
+}
+
+.notice-strip strong {
+  color: var(--primary-dark);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.notice-strip a,
+.notice-strip span {
+  margin-top: 4px;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.info-card,
+.doctor-card,
+.facility-card,
+.faq details,
+.notice-card,
+.map-card,
+.social-card {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--card);
+  box-shadow: 0 12px 30px rgba(16, 32, 51, 0.06);
+}
+
+.info-card {
+  padding: 28px;
+}
+
+.info-card > span {
+  display: inline-grid;
+  min-width: 42px;
+  height: 42px;
+  margin-bottom: 22px;
+  padding: 0 12px;
+  place-items: center;
+  border-radius: 15px;
+  color: white;
+  font-weight: 900;
+  background: var(--primary);
+}
+
+.info-card strong,
+.notice-card strong,
+.map-card strong,
+.social-card strong {
+  color: var(--primary-dark);
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hours-list,
+.parking-list,
+.notice-list {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hours-list li,
+.parking-list li,
+.notice-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.hours-list li:last-child,
+.parking-list li:last-child,
+.notice-list li:last-child {
+  border-bottom: 0;
+}
+
+.hours-list span,
+.parking-list span,
+.notice-list span {
+  color: var(--muted);
+}
+
+.doctor-card {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(24px, 5vw, 56px);
+  align-items: center;
+  padding: clamp(28px, 5vw, 52px);
+}
+
+.doctor-photo,
+.doctor-avatar {
+  display: grid;
+  min-height: 280px;
+  place-items: center;
+  border-radius: 28px;
+  color: white;
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  background:
+    radial-gradient(circle at top right, rgba(100, 204, 197, 0.55), transparent 36%),
+    linear-gradient(135deg, var(--primary-dark), var(--primary));
+}
+
+.doctor-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.doctor-meta span,
+.tag-list li,
+.tag-list span {
+  display: inline-flex;
+  padding: 9px 12px;
+  border-radius: 999px;
+  color: var(--primary-dark);
+  font-size: 14px;
+  font-weight: 800;
+  background: var(--soft);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.facility-card {
+  padding: 24px;
+}
+
+.facility-card span {
+  display: inline-grid;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 22px;
+  place-items: center;
+  border-radius: 15px;
+  color: white;
+  font-weight: 900;
+  background: var(--primary);
+}
+
+.facility-card p,
+.doctor-card p,
+.notice-card p,
+.map-card p,
+.social-card p {
   color: var(--muted);
 }
 
@@ -354,6 +598,25 @@ h3 {
 
 .location-card {
   padding: clamp(28px, 5vw, 46px);
+}
+
+.location-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.map-card,
+.notice-card,
+.social-card {
+  padding: clamp(24px, 4vw, 34px);
+}
+
+.map-actions,
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
 }
 
 .location-card strong,
@@ -410,6 +673,53 @@ h3 {
   font-weight: 900;
 }
 
+.faq {
+  display: grid;
+  gap: 14px;
+}
+
+.faq details {
+  padding: 0 22px;
+}
+
+.faq summary {
+  cursor: pointer;
+  padding: 20px 0;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.faq details p {
+  margin: 0;
+  padding: 0 0 22px;
+  color: var(--muted);
+}
+
+.legal {
+  padding-top: 0;
+}
+
+.legal .notice-card {
+  background: #fbfdfd;
+}
+
+.fixed-cta,
+.floating-cta {
+  position: fixed;
+  right: clamp(16px, 4vw, 28px);
+  bottom: clamp(16px, 4vw, 28px);
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  color: white;
+  font-weight: 900;
+  background: var(--primary);
+  box-shadow: 0 18px 36px rgba(23, 107, 135, 0.28);
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -450,8 +760,14 @@ h3 {
   }
 
   .quick-links,
-  .service-grid {
+  .service-grid,
+  .info-grid,
+  .facility-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .doctor-card {
+    grid-template-columns: 1fr;
   }
 
   .quick-links a:first-child,
@@ -483,7 +799,9 @@ h3 {
   }
 
   .quick-links,
-  .service-grid {
+  .service-grid,
+  .info-grid,
+  .facility-grid {
     grid-template-columns: 1fr;
   }
 
@@ -507,5 +825,12 @@ h3 {
 
   .site-footer {
     flex-direction: column;
+  }
+
+  .fixed-cta {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    justify-content: center;
   }
 }

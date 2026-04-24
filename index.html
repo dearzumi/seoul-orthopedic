@@ -17,6 +17,30 @@
     <meta property="og:url" content="https://seoul-orthopedic.vercel.app/" />
     <link rel="canonical" href="https://seoul-orthopedic.vercel.app/" />
     <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        "name": "서울정형외과",
+        "alternateName": "Seoul Orthopedic Clinic",
+        "url": "https://seoul-orthopedic.vercel.app/",
+        "telephone": "+82-55-545-8275",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "행암로 12 MS빌딩 6층",
+          "addressLocality": "창원시 진해구",
+          "addressRegion": "경상남도",
+          "postalCode": "51628",
+          "addressCountry": "KR"
+        },
+        "medicalSpecialty": ["Orthopedic", "Physiotherapy"],
+        "sameAs": [
+          "https://naver.me/Ffs07ccV",
+          "https://blog.naver.com/prf42",
+          "https://www.youtube.com/@prf4245"
+        ]
+      }
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -29,8 +53,11 @@
       </a>
       <nav class="nav" aria-label="주요 메뉴">
         <a href="#services">진료 분야</a>
+        <a href="#hours">진료시간</a>
+        <a href="#doctor">의료진</a>
         <a href="#about">병원 소개</a>
         <a href="#location">오시는 길</a>
+        <a href="#faq">FAQ</a>
         <a class="nav-cta" href="#contact">예약 문의</a>
       </nav>
     </header>
@@ -46,6 +73,7 @@
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#contact">예약 · 문의하기</a>
+            <a class="button primary phone" href="tel:0555458275">055-545-8275</a>
             <a
               class="button secondary"
               href="https://naver.me/Ffs07ccV"
@@ -54,6 +82,7 @@
             >
               네이버 지도 열기
             </a>
+          <a class="button ghost" href="tel:0555458275">055-545-8275 전화하기</a>
           </div>
         </div>
         <div class="hero-card" aria-label="서울정형외과 진료 핵심 가치">
@@ -81,6 +110,21 @@
         <a href="#joint">관절 클리닉 <span>Joint</span></a>
         <a href="#pain">통증 클리닉 <span>Pain</span></a>
         <a href="#rehab">도수 · 재활 치료 <span>Rehab</span></a>
+      </section>
+
+      <section class="notice-strip" aria-label="주요 문의 바로가기">
+        <div>
+          <strong>대표 전화</strong>
+          <a href="tel:0555458275">055-545-8275</a>
+        </div>
+        <div>
+          <strong>진료시간</strong>
+          <span>방문 전 전화 확인을 권장드립니다.</span>
+        </div>
+        <div>
+          <strong>네이버 플레이스</strong>
+          <a href="https://naver.me/Ffs07ccV" target="_blank" rel="noreferrer">길찾기 열기</a>
+        </div>
       </section>
 
       <section id="services" class="section">
@@ -128,6 +172,42 @@
         </div>
       </section>
 
+      <section id="hours" class="section hours-section">
+        <div class="section-heading">
+          <p class="eyebrow">Clinic Hours</p>
+          <h2>진료시간 안내</h2>
+          <p>
+            진료시간은 병원 사정에 따라 변동될 수 있으니 방문 전 전화로 확인해 주세요.
+          </p>
+        </div>
+        <div class="info-grid">
+          <article class="info-card hours-card">
+            <h3>진료시간</h3>
+            <ul class="hours-list">
+              <li><strong>평일</strong><span>전화 문의</span></li>
+              <li><strong>토요일</strong><span>전화 문의</span></li>
+              <li><strong>점심시간</strong><span>전화 문의</span></li>
+              <li><strong>일요일 · 공휴일</strong><span>전화 문의</span></li>
+            </ul>
+          </article>
+          <article class="info-card callout-card">
+            <span class="icon">☎</span>
+            <h3>예약 및 내원 전 확인</h3>
+            <p>
+              초진, 물리치료, 도수·재활 치료는 대기 상황이 달라질 수 있습니다.
+              빠른 안내를 위해 전화 문의 후 방문해 주세요.
+            </p>
+            <a class="button primary" href="tel:0555458275">전화하기</a>
+          </article>
+          <article class="info-card">
+            <span class="icon">N</span>
+            <h3>네이버 플레이스</h3>
+            <p>지도, 길찾기, 최신 장소 정보는 네이버 플레이스에서 확인하실 수 있습니다.</p>
+            <a href="https://naver.me/Ffs07ccV" target="_blank" rel="noreferrer">플레이스 열기</a>
+          </article>
+        </div>
+      </section>
+
       <section id="about" class="section split">
         <div>
           <p class="eyebrow">About Clinic</p>
@@ -144,6 +224,93 @@
           <li>진료 후 follow-up 관리</li>
           <li>척추·관절 맞춤 재활 안내</li>
         </ul>
+      </section>
+
+      <section id="doctor" class="section doctor-section">
+        <div class="section-heading">
+          <p class="eyebrow">Medical Team</p>
+          <h2>의료진 소개</h2>
+          <p>
+            환자의 생활 목표와 통증 양상을 함께 살피며, 설명이 충분한 진료를
+            우선합니다.
+          </p>
+        </div>
+        <div class="doctor-card">
+          <div class="doctor-photo" aria-hidden="true">DR</div>
+          <div>
+            <strong>대표원장</strong>
+            <h3>정형외과 전문의</h3>
+            <p>
+              척추·관절 통증, 스포츠 손상, 도수·재활 치료까지 보존적 치료를
+              중심으로 환자별 회복 계획을 안내합니다.
+            </p>
+            <div class="doctor-meta">
+              <span>척추·관절 진료</span>
+              <span>비수술 통증 치료</span>
+              <span>재활·운동 처방</span>
+            </div>
+            <small>대표원장 성함과 상세 약력은 확정 후 업데이트할 수 있습니다.</small>
+          </div>
+        </div>
+      </section>
+
+      <section id="facilities" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Facilities</p>
+          <h2>검사 · 치료 · 재활 환경</h2>
+          <p>
+            정확한 평가와 일상 복귀를 돕는 치료 동선을 중심으로 진료 환경을
+            안내합니다.
+          </p>
+        </div>
+        <div class="info-grid">
+          <article class="info-card">
+            <span>01</span>
+            <h3>영상 기반 평가</h3>
+            <p>X-ray 등 영상 검사와 문진을 바탕으로 통증 원인을 세밀하게 확인합니다.</p>
+          </article>
+          <article class="info-card">
+            <span>02</span>
+            <h3>비수술 치료</h3>
+            <p>상태에 맞는 약물·주사·물리치료 계획으로 부담을 줄인 치료를 지향합니다.</p>
+          </article>
+          <article class="info-card">
+            <span>03</span>
+            <h3>도수 치료</h3>
+            <p>관절 가동 범위와 근육 긴장을 평가해 맞춤 도수 치료를 안내합니다.</p>
+          </article>
+          <article class="info-card">
+            <span>04</span>
+            <h3>운동 재활</h3>
+            <p>재발 방지와 기능 회복을 위한 단계별 운동 재활 방향을 제안합니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="parking" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Parking</p>
+          <h2>주차 · 내원 안내</h2>
+          <p>건물 주차 및 주변 교통 상황은 방문 전 전화로 확인해 주세요.</p>
+        </div>
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>주차 안내</h3>
+            <ul class="parking-list">
+              <li><strong>건물 주차</strong><span>전화 문의</span></li>
+              <li><strong>주변 주차</strong><span>방문 전 확인 권장</span></li>
+              <li><strong>대중교통</strong><span>네이버 지도 길찾기 이용</span></li>
+            </ul>
+          </article>
+          <article class="info-card">
+            <h3>초진 준비</h3>
+            <p>기존 검사 결과지, 복용 중인 약 정보, 통증 발생 시점 등을 함께 알려주시면 진료에 도움이 됩니다.</p>
+          </article>
+          <article class="info-card">
+            <h3>예약 문의</h3>
+            <p>대기 시간을 줄이기 위해 내원 전 대표 전화 또는 네이버 플레이스 확인을 권장드립니다.</p>
+          </article>
+        </div>
       </section>
 
       <section id="location" class="section location">
@@ -180,43 +347,98 @@
         </div>
       </section>
 
+      <section id="faq" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">FAQ</p>
+          <h2>자주 묻는 질문</h2>
+          <p>내원 전 많이 궁금해하시는 내용을 정리했습니다.</p>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>예약 없이 방문해도 되나요?</summary>
+            <p>방문은 가능할 수 있으나 대기 상황이 달라질 수 있어 전화 문의 후 내원을 권장드립니다.</p>
+          </details>
+          <details>
+            <summary>도수치료나 재활치료 상담도 가능한가요?</summary>
+            <p>통증 원인과 기능 상태를 확인한 뒤 도수·재활 치료 방향을 안내합니다.</p>
+          </details>
+          <details>
+            <summary>초진 때 무엇을 준비하면 좋나요?</summary>
+            <p>이전 검사 자료, 복용 약, 증상 발생 시점과 악화 동작을 정리해 오시면 좋습니다.</p>
+          </details>
+          <details>
+            <summary>주차가 가능한가요?</summary>
+            <p>주차 가능 여부와 지원 기준은 변동될 수 있으니 방문 전 전화로 확인해 주세요.</p>
+          </details>
+        </div>
+      </section>
+
       <section id="contact" class="section contact">
         <div>
           <p class="eyebrow">Reservation</p>
           <h2>예약 · 문의</h2>
           <p>
-            진료 시간과 예약 가능 여부는 전화로 안내드립니다. 대표 전화번호가
-            확정되면 바로 연결 버튼을 추가할 수 있습니다.
+            진료 시간과 예약 가능 여부는 전화로 안내드립니다. 블로그와 유튜브에서도
+            병원 소식을 확인하실 수 있습니다.
           </p>
         </div>
         <div class="contact-panel">
           <strong>대표 전화</strong>
-          <p>전화 문의 부탁드립니다.</p>
+          <p><a href="tel:0555458275">055-545-8275</a></p>
           <div class="contact-links">
             <a
-              href="https://search.naver.com/search.naver?query=%EC%84%9C%EC%9A%B8%EC%A0%95%ED%98%95%EC%99%B8%EA%B3%BC%20%EC%A7%84%ED%95%B4%EA%B5%AC%20%ED%96%89%EC%95%94%EB%A1%9C%2012"
+              href="https://blog.naver.com/prf42"
               target="_blank"
               rel="noreferrer"
             >
-              네이버 검색
+              블로그
             </a>
             <a
-              href="https://www.youtube.com/results?search_query=%EC%84%9C%EC%9A%B8%EC%A0%95%ED%98%95%EC%99%B8%EA%B3%BC"
+              href="https://www.youtube.com/@prf4245"
               target="_blank"
               rel="noreferrer"
             >
-              유튜브 검색
+              유튜브
+            </a>
+            <a
+              href="https://naver.me/Ffs07ccV"
+              target="_blank"
+              rel="noreferrer"
+            >
+              네이버 지도
             </a>
           </div>
         </div>
       </section>
+
+      <section id="legal" class="section legal">
+        <div class="notice-card">
+          <strong>의료기관 정보 표기 안내</strong>
+          <p>
+            의료기관명, 대표자, 사업자등록번호, 의료기관 개설 신고번호, 비급여 안내 등
+            법정 표기 정보는 확정 자료를 전달받는 즉시 이 영역에 반영할 수 있습니다.
+          </p>
+        </div>
+      </section>
     </main>
 
+    <a class="floating-cta" href="tel:0555458275" aria-label="서울정형외과 전화 걸기">
+      전화 문의 055-545-8275
+    </a>
+
     <footer class="site-footer">
-      <p>© 서울정형외과. All rights reserved.</p>
-      <a href="https://seoul-orthopedic.vercel.app/" target="_blank" rel="noreferrer">
-        seoul-orthopedic.vercel.app
-      </a>
+      <div>
+        <strong>서울정형외과</strong>
+        <p>경남 창원시 진해구 행암로 12 MS빌딩 6층</p>
+        <p>대표 전화: <a href="tel:0555458275">055-545-8275</a></p>
+      </div>
+      <div class="footer-links">
+        <a href="https://seoul-orthopedic.vercel.app/" target="_blank" rel="noreferrer">
+          seoul-orthopedic.vercel.app
+        </a>
+        <a href="https://blog.naver.com/prf42" target="_blank" rel="noreferrer">블로그</a>
+        <a href="https://www.youtube.com/@prf4245" target="_blank" rel="noreferrer">유튜브</a>
+      </div>
     </footer>
   </body>
 </html>

@@ -1,0 +1,11 @@
+{
+  "name": "seoul-orthopedic",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 3000",
+    "start": "npm run dev",
+    "build": "node ./scripts/validate-static-site.js",
+    "lint": "node --check ./scripts/validate-static-site.js && node ./scripts/validate-static-site.js"
+  }
+}

@@ -18,7 +18,7 @@ const requiredSnippets = [
   'id="services"',
   'id="location"',
   'id="contact"',
-  'https://map.naver.com/p/search/',
+  'https://naver.me/Ffs07ccV',
   'https://map.kakao.com/link/search/',
 ];
 

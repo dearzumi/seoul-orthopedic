@@ -33,6 +33,7 @@ const requiredSnippets = [
   '<meta name="mobile-web-app-capable" content="yes" />',
   '<meta name="apple-mobile-web-app-capable" content="yes" />',
   'navigator.serviceWorker.register',
+  'href="#app"',
   'id="app"',
   'iPhone 설치 방법',
   'Android 설치 방법',

@@ -6,6 +6,8 @@ const APP_SHELL = [
   "/offline.html",
   "/site.webmanifest",
   "/og-image.svg",
+  "/app-icon.svg",
+  "/app.js",
 ];
 
 self.addEventListener("install", (event) => {

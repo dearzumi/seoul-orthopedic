@@ -16,6 +16,11 @@
     <meta name="author" content="서울정형외과" />
     <meta name="theme-color" content="#176b87" />
     <meta name="format-detection" content="telephone=yes" />
+    <meta name="application-name" content="서울정형외과" />
+    <meta name="apple-mobile-web-app-title" content="서울정형외과" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="geo.region" content="KR-48" />
     <meta name="geo.placename" content="창원시 진해구 장천동" />
     <meta name="geo.position" content="35.129;128.706" />
@@ -43,6 +48,7 @@
     <link rel="icon" href="./og-image.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="./og-image.svg" />
     <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -147,6 +153,7 @@
         <a href="#about">병원 소개</a>
         <a href="#location">오시는 길</a>
         <a href="#faq">FAQ</a>
+        <a href="#mobile-app">앱 설치</a>
         <a class="nav-cta" href="#contact">예약 문의</a>
       </nav>
     </header>
@@ -509,6 +516,21 @@
           </p>
         </div>
       </section>
+
+      <section id="app" class="section app-install" aria-label="모바일 앱 설치 안내">
+        <div>
+          <p class="eyebrow">Mobile App</p>
+          <h2>서울정형외과를 휴대폰 홈 화면에 추가하세요</h2>
+          <p>
+            별도 앱스토어 설치 없이 모바일 브라우저에서 홈 화면에 추가하면 진료시간,
+            전화 문의, 지도 길찾기를 앱처럼 빠르게 열 수 있습니다.
+          </p>
+        </div>
+        <div class="install-steps">
+          <span>Android: 브라우저 메뉴 → 앱 설치</span>
+          <span>iPhone: 공유 버튼 → 홈 화면에 추가</span>
+        </div>
+      </section>
     </main>
 
     <a class="floating-cta" href="tel:0555458275" aria-label="서울정형외과 전화 걸기">
@@ -529,5 +551,14 @@
         <a href="https://www.youtube.com/@prf4245" target="_blank" rel="noreferrer">유튜브</a>
       </div>
     </footer>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("./sw.js").catch(() => {
+            // The site still works normally if service worker registration is blocked.
+          });
+        });
+      }
+    </script>
   </body>
 </html>

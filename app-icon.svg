@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">¸xü q DtX</title>
+  <desc id="desc">­]É 0½  ¸xü SO tÈ\</desc>
+  <defs>
+    <linearGradient id="bg" x1="72" x2="440" y1="72" y2="440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#176b87"/>
+      <stop offset="1" stop-color="#64ccc5"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="154" fill="rgba(255,255,255,0.16)"/>
+  <path fill="#fff" d="M173 306c21 15 46 24 74 24 42 0 67-20 67-52 0-29-18-43-58-53-27-7-36-12-36-25 0-12 11-20 30-20 20 0 39 6 57 18l19-33c-21-15-45-22-73-22-39 0-66 21-66 53 0 31 21 45 61 55 25 6 33 12 33 24 0 13-12 21-33 21-23 0-44-8-63-22l-12 32Zm164 21h39V145h-39v182Z"/>
+</svg>

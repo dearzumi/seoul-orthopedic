@@ -2,18 +2,63 @@
   "name": "서울정형외과",
   "short_name": "서울정형외과",
   "description": "창원 진해구 척추·관절·통증·도수 재활 진료 안내",
+  "id": "/?source=pwa",
   "lang": "ko-KR",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "portrait-primary",
   "background_color": "#f7fbfc",
   "theme_color": "#176b87",
+  "categories": ["medical", "health", "navigation"],
   "icons": [
     {
       "src": "/og-image.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
-      "purpose": "any"
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "전화 문의",
+      "short_name": "전화",
+      "description": "서울정형외과 대표전화로 문의하기",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "/og-image.svg",
+          "sizes": "512x512",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "오시는 길",
+      "short_name": "길찾기",
+      "description": "서울정형외과 위치와 지도 링크 확인",
+      "url": "/#location",
+      "icons": [
+        {
+          "src": "/og-image.svg",
+          "sizes": "512x512",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "진료시간",
+      "short_name": "시간",
+      "description": "서울정형외과 진료시간과 내원 전 안내 확인",
+      "url": "/#hours",
+      "icons": [
+        {
+          "src": "/og-image.svg",
+          "sizes": "512x512",
+          "type": "image/svg+xml"
+        }
+      ]
     }
   ]
 }

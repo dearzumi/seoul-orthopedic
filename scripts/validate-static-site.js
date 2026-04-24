@@ -2,7 +2,14 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
-const requiredFiles = ["index.html", "styles.css"];
+const requiredFiles = [
+  "index.html",
+  "styles.css",
+  "robots.txt",
+  "sitemap.xml",
+  "site.webmanifest",
+  "og-image.svg",
+];
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 
 for (const file of requiredFiles) {
@@ -15,6 +22,11 @@ const requiredSnippets = [
   '<html lang="ko">',
   '<meta property="og:url" content="https://seoul-orthopedic.vercel.app/" />',
   'href="./styles.css"',
+  '<meta name="robots" content="index, follow',
+  'name="keywords"',
+  '<meta property="og:image" content="https://seoul-orthopedic.vercel.app/og-image.svg" />',
+  '<meta name="twitter:card" content="summary_large_image" />',
+  '<link rel="manifest" href="./site.webmanifest" />',
   'id="services"',
   'id="hours"',
   'id="doctor"',
@@ -29,12 +41,40 @@ const requiredSnippets = [
   'https://www.youtube.com/@prf4245',
   'tel:0555458275',
   'application/ld+json',
+  '"MedicalClinic"',
+  '"LocalBusiness"',
 ];
 
 for (const snippet of requiredSnippets) {
   if (!html.includes(snippet)) {
     throw new Error(`Expected index.html to include: ${snippet}`);
   }
+}
+
+const jsonLdMatch = html.match(
+  /<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/,
+);
+
+if (!jsonLdMatch) {
+  throw new Error("Missing JSON-LD structured data");
+}
+
+JSON.parse(jsonLdMatch[1]);
+
+const robots = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
+const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
+const manifest = JSON.parse(fs.readFileSync(path.join(root, "site.webmanifest"), "utf8"));
+
+if (!robots.includes("Sitemap: https://seoul-orthopedic.vercel.app/sitemap.xml")) {
+  throw new Error("robots.txt must reference sitemap.xml");
+}
+
+if (!sitemap.includes("<loc>https://seoul-orthopedic.vercel.app/</loc>")) {
+  throw new Error("sitemap.xml must include canonical homepage");
+}
+
+if (manifest.name !== "서울정형외과") {
+  throw new Error("site.webmanifest must include the clinic name");
 }
 
 console.log("Static site validation passed.");

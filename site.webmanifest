@@ -1,0 +1,19 @@
+{
+  "name": "서울정형외과",
+  "short_name": "서울정형외과",
+  "description": "창원 진해구 척추·관절·통증·도수 재활 진료 안내",
+  "lang": "ko-KR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7fbfc",
+  "theme_color": "#176b87",
+  "icons": [
+    {
+      "src": "/og-image.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

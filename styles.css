@@ -731,6 +731,88 @@ h3 {
   background: #fbfdfd;
 }
 
+.app-install {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(24px, 5vw, 56px);
+  align-items: start;
+  border: 1px solid var(--line);
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at top left, rgba(100, 204, 197, 0.22), transparent 34%),
+    white;
+  box-shadow: var(--shadow);
+}
+
+.app-badge {
+  display: inline-flex;
+  margin-bottom: 18px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--primary-dark);
+  font-size: 13px;
+  font-weight: 900;
+  background: var(--soft);
+}
+
+.app-install p {
+  color: var(--muted);
+}
+
+.install-guide {
+  display: grid;
+  gap: 18px;
+}
+
+.install-card {
+  padding: clamp(22px, 4vw, 30px);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.install-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.platform-icon {
+  display: inline-grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 14px;
+  color: white;
+  font-size: 18px;
+  background: var(--primary);
+}
+
+.install-card ol {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.install-card li {
+  color: var(--muted);
+}
+
+.install-card strong {
+  color: var(--ink);
+}
+
+.install-note {
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  border-radius: 18px;
+  color: var(--primary-dark);
+  font-weight: 800;
+  background: var(--soft);
+}
+
 .fixed-cta,
 .floating-cta {
   position: fixed;

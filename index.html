@@ -220,7 +220,9 @@
         </div>
         <div>
           <strong>진료시간</strong>
-          <span>방문 전 전화 확인을 권장드립니다.</span>
+          <button class="text-button" type="button" data-modal-open="calendar">
+            병원 달력 보기
+          </button>
         </div>
         <div>
           <strong>네이버 플레이스</strong>
@@ -445,6 +447,13 @@
             진료시간은 병원 사정에 따라 변동될 수 있으니 방문 전 전화로 확인해 주세요.
           </p>
         </div>
+        <div class="calendar-cta">
+          <div>
+            <strong>이번 달 병원 달력</strong>
+            <p>일요일과 법정 공휴일은 빨간색으로 표시됩니다. 병원 임시휴무는 전화 또는 네이버 플레이스로 확인해 주세요.</p>
+          </div>
+          <button class="button primary" type="button" data-modal-open="calendar">달력 보기</button>
+        </div>
         <div class="info-grid">
           <article class="info-card hours-card">
             <h3>진료시간</h3>
@@ -452,8 +461,11 @@
               <li><strong>평일</strong><span>전화 문의</span></li>
               <li><strong>토요일</strong><span>전화 문의</span></li>
               <li><strong>점심시간</strong><span>전화 문의</span></li>
-              <li><strong>일요일 · 공휴일</strong><span>전화 문의</span></li>
+              <li><strong>일요일 · 공휴일</strong><span>휴무 가능성 높음 · 전화 확인</span></li>
             </ul>
+            <button class="button secondary compact" type="button" data-modal-open="calendar">
+              이번 달 병원 달력 보기
+            </button>
           </article>
           <article class="info-card callout-card">
             <span class="icon">☎</span>
@@ -470,6 +482,20 @@
             <p>지도, 길찾기, 최신 장소 정보는 네이버 플레이스에서 확인하실 수 있습니다.</p>
             <a href="https://naver.me/Ffs07ccV" target="_blank" rel="noreferrer">플레이스 열기</a>
           </article>
+        </div>
+        <div class="popup-help-grid" aria-label="빠른 안내 팝업">
+          <button type="button" data-modal-open="firstVisit">
+            <span>초진 준비</span>
+            <strong>처음 오시나요?</strong>
+          </button>
+          <button type="button" data-modal-open="redFlags">
+            <span>주의 증상</span>
+            <strong>빨리 상담해야 할 때</strong>
+          </button>
+          <button type="button" data-modal-open="visitInfo">
+            <span>내원 안내</span>
+            <strong>주차·지도·전화</strong>
+          </button>
         </div>
       </section>
 
@@ -804,6 +830,83 @@
         </div>
       </section>
     </main>
+
+    <div class="modal-layer" data-modal-layer hidden>
+      <div class="modal-backdrop" data-modal-close></div>
+      <section
+        class="clinic-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="calendar-title"
+        tabindex="-1"
+        data-modal-panel
+      >
+        <button class="modal-close" type="button" aria-label="팝업 닫기" data-modal-close>
+          ×
+        </button>
+        <div data-modal-view="calendar">
+          <p class="eyebrow">Clinic Calendar</p>
+          <div class="modal-title-row">
+            <button type="button" class="calendar-nav" data-calendar-prev aria-label="이전 달">‹</button>
+            <h2 id="calendar-title" data-calendar-title>병원 달력</h2>
+            <button type="button" class="calendar-nav" data-calendar-next aria-label="다음 달">›</button>
+          </div>
+          <p class="modal-copy">
+            빨간 날짜는 일요일 또는 확인 가능한 공휴일입니다. 병원 임시 휴무와 정확한
+            진료시간은 네이버 플레이스 또는 전화로 한 번 더 확인해 주세요.
+          </p>
+          <div class="calendar-legend" aria-label="달력 범례">
+            <span><i class="legend-dot holiday"></i>휴무/공휴일</span>
+            <span><i class="legend-dot today"></i>오늘</span>
+            <span><i class="legend-dot normal"></i>진료 확인 필요</span>
+          </div>
+          <div class="clinic-calendar" id="clinic-calendar" data-calendar-grid aria-label="월간 병원 달력"></div>
+          <div class="modal-actions">
+            <a class="button primary" href="tel:0555458275">전화로 확인하기</a>
+            <a class="button secondary" href="https://naver.me/Ffs07ccV" target="_blank" rel="noreferrer">
+              네이버 플레이스
+            </a>
+          </div>
+        </div>
+        <div data-modal-view="firstVisit" hidden>
+          <p class="eyebrow">First Visit</p>
+          <h2 id="first-visit-title">초진 준비 체크리스트</h2>
+          <ul class="modal-list">
+            <li>기존 X-ray, MRI, CT 자료 또는 검사 결과지를 가져오시면 좋습니다.</li>
+            <li>복용 중인 약, 알레르기, 과거 수술·시술 이력을 알려주세요.</li>
+            <li>통증 시작 시점, 악화 동작, 저림·마비 여부를 메모해 오시면 진료에 도움이 됩니다.</li>
+          </ul>
+          <div class="modal-actions">
+            <a class="button primary" href="tel:0555458275">초진 문의하기</a>
+          </div>
+        </div>
+        <div data-modal-view="redFlags" hidden>
+          <p class="eyebrow">Red Flags</p>
+          <h2 id="red-flags-title">빠른 상담이 필요한 증상</h2>
+          <ul class="modal-list warning">
+            <li>팔·다리에 힘이 빠지거나 감각이 급격히 둔해지는 경우</li>
+            <li>보행 장애, 심한 야간통, 외상 후 지속되는 통증</li>
+            <li>배뇨·배변 이상이 동반되는 허리 통증</li>
+          </ul>
+          <p class="modal-copy">응급 상황으로 판단되면 가까운 응급실 또는 119를 우선 이용해 주세요.</p>
+        </div>
+        <div data-modal-view="visitInfo" hidden>
+          <p class="eyebrow">Visit Info</p>
+          <h2 id="visit-info-title">주차 · 지도 · 전화 안내</h2>
+          <ul class="modal-list">
+            <li>주소: 경남 창원시 진해구 행암로 12 MS빌딩 6층</li>
+            <li>주차 가능 여부와 지원 기준은 방문 전 전화 확인을 권장드립니다.</li>
+            <li>네이버 지도 길찾기를 이용하시면 현재 위치 기준으로 안내받을 수 있습니다.</li>
+          </ul>
+          <div class="modal-actions">
+            <a class="button primary" href="tel:0555458275">전화 문의</a>
+            <a class="button secondary" href="https://naver.me/Ffs07ccV" target="_blank" rel="noreferrer">
+              길찾기
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <nav class="mobile-tabbar" aria-label="앱 빠른 메뉴">
       <a href="tel:0555458275">

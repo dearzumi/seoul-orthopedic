@@ -1,0 +1,9 @@
+{
+  "appId": "com.seoulorthopedic.clinic",
+  "appName": "서울정형외과",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}

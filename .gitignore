@@ -1,1 +1,8 @@
+node_modules
+dist
+.android-sdk
 .vercel
+.gradle
+local.properties
+*.apk
+*.aab

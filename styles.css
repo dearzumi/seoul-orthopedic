@@ -813,6 +813,21 @@ h3 {
   background: var(--soft);
 }
 
+.install-status {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.install-button {
+  margin-top: 18px;
+}
+
+.install-button[hidden] {
+  display: none;
+}
+
 .fixed-cta,
 .floating-cta {
   position: fixed;

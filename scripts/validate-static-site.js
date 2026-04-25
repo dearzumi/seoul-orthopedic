@@ -39,6 +39,8 @@ const requiredSnippets = [
   'id="app"',
   'iPhone 설치 방법',
   'Android 설치 방법',
+  'data-install-button',
+  'Android Chrome에서는 설치 가능할 때 아래 버튼이 활성화됩니다.',
   '공유 버튼',
   '앱 설치',
   'id="services"',
@@ -142,7 +144,12 @@ for (const asset of ["/index.html", "/styles.css", "/app.js", "/offline.html", "
   }
 }
 
-if (!appScript.includes("beforeinstallprompt") || !appScript.includes("navigator.serviceWorker.register")) {
+if (
+  !appScript.includes("beforeinstallprompt") ||
+  !appScript.includes("navigator.serviceWorker.register") ||
+  !appScript.includes("installPromptEvent.prompt()") ||
+  !appScript.includes("installButton.hidden = false")
+) {
   throw new Error("app.js must handle install prompts and service worker registration");
 }
 

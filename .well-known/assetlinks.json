@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.seoulorthopedic.clinic",
+      "sha256_cert_fingerprints": [
+        "F8:CB:64:7F:0B:72:4A:82:C1:29:32:01:54:FC:19:96:66:9D:10:E3:94:37:0A:22:53:7F:34:58:B7:1D:14:A3"
+      ]
+    }
+  }
+]

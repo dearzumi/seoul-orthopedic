@@ -11,6 +11,7 @@ const requiredFiles = [
   "site.webmanifest",
   "og-image.svg",
   "app-icon.svg",
+  ".well-known/assetlinks.json",
   "offline.html",
   "sw.js",
 ];
@@ -93,6 +94,9 @@ const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "site.webmanifest"), "utf8"));
 const serviceWorker = fs.readFileSync(path.join(root, "sw.js"), "utf8");
 const appScript = fs.readFileSync(path.join(root, "app.js"), "utf8");
+const assetLinks = JSON.parse(
+  fs.readFileSync(path.join(root, ".well-known", "assetlinks.json"), "utf8"),
+);
 
 const ids = new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]));
 const anchorLinks = [...html.matchAll(/\shref="#([^"]+)"/g)].map((match) => match[1]);
@@ -131,6 +135,18 @@ if (manifest.display !== "standalone" || manifest.start_url !== "/?source=pwa") 
 
 if (!Array.isArray(manifest.shortcuts) || manifest.shortcuts.length < 3) {
   throw new Error("site.webmanifest must include app shortcuts");
+}
+
+if (
+  !Array.isArray(assetLinks) ||
+  !assetLinks.some((entry) =>
+    entry.target?.package_name === "com.seoulorthopedic.clinic" &&
+    entry.target?.sha256_cert_fingerprints?.some((fingerprint) =>
+      fingerprint.includes("F8:CB:64:7F"),
+    ),
+  )
+) {
+  throw new Error("assetlinks.json must map the website to the Android app package");
 }
 
 for (const shortcut of manifest.shortcuts) {

@@ -17,6 +17,8 @@ const filesToCopy = [
   "sitemap.xml",
 ];
 
+const directoriesToCopy = [".well-known"];
+
 fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(dist, { recursive: true });
 
@@ -29,6 +31,15 @@ for (const file of filesToCopy) {
   }
 
   fs.copyFileSync(source, target);
+}
+
+for (const directory of directoriesToCopy) {
+  const source = path.join(root, directory);
+  const target = path.join(dist, directory);
+
+  if (fs.existsSync(source)) {
+    fs.cpSync(source, target, { recursive: true });
+  }
 }
 
 console.log(`Mobile app web assets copied to ${path.relative(root, dist)}/`);

@@ -6,6 +6,10 @@ const dist = path.join(root, "dist");
 
 const filesToCopy = [
   "index.html",
+  "privacy.html",
+  "non-covered.html",
+  "clinic-info.html",
+  "store-readiness.html",
   "offline.html",
   "styles.css",
   "app.js",

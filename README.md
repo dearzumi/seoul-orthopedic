@@ -41,6 +41,17 @@ npm run android:open
 
 iOS 앱은 같은 Capacitor 설정을 사용할 수 있지만, iOS 프로젝트 생성과 빌드는 macOS/Xcode 환경에서 진행해야 합니다.
 
+## 출시 준비 페이지
+
+아래 페이지는 실제 병원 확정 정보를 채우기 전까지 placeholder 안내로 제공됩니다.
+
+- `clinic-info.html`: 의료기관 정보
+- `non-covered.html`: 비급여 안내
+- `privacy.html`: 개인정보 처리방침
+- `store-readiness.html`: Play Store / App Store 출시 체크리스트
+
+Play Store 출시 전에는 release signing certificate SHA256 fingerprint로 `.well-known/assetlinks.json`을 교체해야 합니다.
+
 ## 배포 URL
 
 https://seoul-orthopedic.vercel.app/

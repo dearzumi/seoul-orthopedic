@@ -46,6 +46,16 @@ a {
   text-decoration: none;
 }
 
+.policy-page {
+  background:
+    radial-gradient(circle at top left, rgba(100, 204, 197, 0.18), transparent 30%),
+    var(--bg);
+}
+
+a[data-track] {
+  cursor: pointer;
+}
+
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid rgba(100, 204, 197, 0.85);
@@ -1335,6 +1345,49 @@ body.has-open-modal {
 
 .legal .notice-card {
   background: #fbfdfd;
+}
+
+.legal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.policy-main {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 84px) clamp(20px, 5vw, 0px);
+}
+
+.policy-hero,
+.policy-section {
+  padding: clamp(26px, 5vw, 42px);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: white;
+  box-shadow: 0 14px 40px rgba(16, 32, 51, 0.06);
+}
+
+.policy-hero {
+  margin-bottom: 18px;
+}
+
+.policy-section {
+  margin-top: 18px;
+}
+
+.policy-section p,
+.policy-section li {
+  color: var(--muted);
+}
+
+.policy-section ul,
+.policy-section ol {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 0;
+  padding-left: 22px;
 }
 
 .site-connection {

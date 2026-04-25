@@ -15,6 +15,14 @@
     .filter(Boolean);
   let installPromptEvent;
 
+  const trackEvent = (name, detail = {}) => {
+    window.dispatchEvent(new CustomEvent("clinic:analytics", { detail: { name, ...detail } }));
+
+    if (window.gtag) {
+      window.gtag("event", name, detail);
+    }
+  };
+
   const holidayMap = {
     "2026-01-01": "신정",
     "2026-02-16": "설날 연휴",
@@ -164,7 +172,17 @@
 
   document.querySelectorAll("[data-modal-open]").forEach((button) => {
     button.addEventListener("click", () => {
+      trackEvent("open_popup", { popup: button.dataset.modalOpen });
       openModal(button.dataset.modalOpen);
+    });
+  });
+
+  document.querySelectorAll("[data-track]").forEach((element) => {
+    element.addEventListener("click", () => {
+      trackEvent(element.dataset.track, {
+        label: element.textContent.trim(),
+        href: element.getAttribute("href") || "",
+      });
     });
   });
 
@@ -222,6 +240,7 @@
 
   installButton?.addEventListener("click", async () => {
     if (!installPromptEvent) {
+      trackEvent("app_install_unavailable");
       if (installStatus) {
         installStatus.textContent =
           "현재 브라우저에서는 자동 설치 팝업을 열 수 없습니다. Android Chrome에서 접속하거나 아래 안내에 따라 홈 화면에 추가해 주세요.";
@@ -231,6 +250,7 @@
 
     installPromptEvent.prompt();
     const choice = await installPromptEvent.userChoice;
+    trackEvent("app_install_prompt", { outcome: choice.outcome });
     installPromptEvent = null;
     if (choice.outcome === "accepted" && installButton) {
       installButton.hidden = true;

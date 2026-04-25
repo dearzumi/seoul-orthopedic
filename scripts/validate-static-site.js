@@ -4,6 +4,10 @@ const path = require("node:path");
 const root = path.resolve(__dirname, "..");
 const requiredFiles = [
   "index.html",
+  "privacy.html",
+  "non-covered.html",
+  "clinic-info.html",
+  "store-readiness.html",
   "styles.css",
   "app.js",
   "robots.txt",
@@ -85,6 +89,10 @@ const requiredSnippets = [
   '초진 전 확인하면 좋은 안내',
   '빠른 진료 상담이 필요한 증상',
   '의료기관 정보 · 비급여 · 개인정보 안내',
+  'href="./privacy.html"',
+  'href="./non-covered.html"',
+  'href="./clinic-info.html"',
+  'href="./store-readiness.html"',
   '초진부터 회복까지 한눈에',
   'application/ld+json',
   '"MedicalClinic"',
@@ -143,6 +151,12 @@ if (!sitemap.includes("<loc>https://seoul-orthopedic.vercel.app/</loc>")) {
   throw new Error("sitemap.xml must include canonical homepage");
 }
 
+for (const page of ["privacy", "non-covered", "clinic-info", "store-readiness"]) {
+  if (!sitemap.includes(`<loc>https://seoul-orthopedic.vercel.app/${page}.html</loc>`)) {
+    throw new Error(`sitemap.xml must include ${page}.html`);
+  }
+}
+
 if (manifest.name !== "서울정형외과") {
   throw new Error("site.webmanifest must include the clinic name");
 }
@@ -193,9 +207,10 @@ if (
   !appScript.includes("beforeinstallprompt") ||
   !appScript.includes("navigator.serviceWorker.register") ||
   !appScript.includes("installPromptEvent.prompt()") ||
-  !appScript.includes("installButton.hidden = false")
+  !appScript.includes("installButton.hidden = false") ||
+  !appScript.includes("trackEvent")
 ) {
-  throw new Error("app.js must handle install prompts and service worker registration");
+  throw new Error("app.js must handle install prompts, tracking, and service worker registration");
 }
 
 console.log("Static site validation passed.");

@@ -10,6 +10,9 @@
   const calendarTitle = document.querySelector("[data-calendar-title]");
   const calendarPrev = document.querySelector("[data-calendar-prev]");
   const calendarNext = document.querySelector("[data-calendar-next]");
+  const symptomMemoForm = document.querySelector("[data-symptom-form]");
+  const symptomMemoOutput = document.querySelector("[data-symptom-output]");
+  const symptomCopyButton = document.querySelector("[data-copy-symptom-memo]");
   const sections = navLinks
     .map((link) => document.querySelector(link.getAttribute("href")))
     .filter(Boolean);
@@ -166,6 +169,34 @@
     document.body.classList.remove("has-open-modal");
   };
 
+  const buildSymptomMemo = () => {
+    if (!symptomMemoForm || !symptomMemoOutput) {
+      return "";
+    }
+
+    const formData = new FormData(symptomMemoForm);
+    const values = {
+      area: formData.get("area") || "미입력",
+      duration: formData.get("duration") || "미입력",
+      score: formData.get("score") || "미입력",
+      trigger: formData.get("trigger") || "미입력",
+      symptoms: formData.getAll("symptoms"),
+      note: formData.get("note") || "미입력",
+    };
+    const memo = [
+      "[서울정형외과 내원 전 통증 메모]",
+      `통증 부위: ${values.area}`,
+      `통증 기간: ${values.duration}`,
+      `통증 강도: ${values.score}/10`,
+      `악화 동작/상황: ${values.trigger}`,
+      `동반 증상: ${values.symptoms.length ? values.symptoms.join(", ") : "없음/미입력"}`,
+      `추가 메모: ${values.note}`,
+    ].join("\n");
+
+    symptomMemoOutput.value = memo;
+    return memo;
+  };
+
   syncUiState();
   renderClinicCalendar();
   window.addEventListener("scroll", syncUiState, { passive: true });
@@ -175,6 +206,34 @@
       trackEvent("open_popup", { popup: button.dataset.modalOpen });
       openModal(button.dataset.modalOpen);
     });
+  });
+
+  symptomMemoForm?.addEventListener("input", buildSymptomMemo);
+  symptomMemoForm?.addEventListener("change", buildSymptomMemo);
+  symptomMemoForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    buildSymptomMemo();
+    trackEvent("symptom_memo_generate");
+  });
+
+  symptomCopyButton?.addEventListener("click", async () => {
+    const memo = buildSymptomMemo();
+
+    if (!memo) {
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(memo);
+      symptomCopyButton.textContent = "복사 완료";
+      trackEvent("symptom_memo_copy");
+      window.setTimeout(() => {
+        symptomCopyButton.textContent = "메모 복사하기";
+      }, 1800);
+    } catch {
+      symptomMemoOutput?.focus();
+      symptomMemoOutput?.select();
+    }
   });
 
   document.querySelectorAll("[data-track]").forEach((element) => {

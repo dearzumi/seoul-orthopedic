@@ -54,6 +54,11 @@ const requiredSnippets = [
   'id="programs"',
   'id="process"',
   'id="patient-guide"',
+  'data-modal-open="symptomMemo"',
+  '통증 메모 작성하기',
+  'data-symptom-form',
+  'data-symptom-output',
+  'data-copy-symptom-memo',
   'href="#symptoms"',
   'href="#process"',
   'id="hours"',
@@ -208,9 +213,10 @@ if (
   !appScript.includes("navigator.serviceWorker.register") ||
   !appScript.includes("installPromptEvent.prompt()") ||
   !appScript.includes("installButton.hidden = false") ||
-  !appScript.includes("trackEvent")
+  !appScript.includes("trackEvent") ||
+  !appScript.includes("buildSymptomMemo")
 ) {
-  throw new Error("app.js must handle install prompts, tracking, and service worker registration");
+  throw new Error("app.js must handle install prompts, tracking, pain memo, and service worker registration");
 }
 
 console.log("Static site validation passed.");

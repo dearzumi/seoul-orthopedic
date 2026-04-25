@@ -1335,6 +1335,98 @@ h3 {
   color: #dc2626;
 }
 
+.self-check-form,
+.pain-memo-form {
+  display: grid;
+  gap: 16px;
+}
+
+.self-check-form label,
+.self-check-form fieldset,
+.pain-memo-form label,
+.pain-memo-form fieldset {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.self-check-form span,
+.self-check-form legend,
+.pain-memo-form span,
+.pain-memo-form legend {
+  color: var(--primary-dark);
+  font-weight: 900;
+}
+
+.self-check-form input,
+.self-check-form select,
+.self-check-form textarea,
+.pain-memo-form input,
+.pain-memo-form select,
+.pain-memo-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: var(--ink);
+  font: inherit;
+  background: white;
+}
+
+.self-check-form textarea,
+.pain-memo-form textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.checkbox-grid label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: var(--muted);
+  background: var(--soft);
+}
+
+.checkbox-grid input {
+  width: auto;
+}
+
+.self-check-result,
+[data-symptom-output] {
+  min-height: 92px;
+  padding: 14px;
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  color: var(--muted);
+  white-space: pre-wrap;
+  background: #fbfdfd;
+}
+
+.memo-status {
+  min-height: 20px;
+  margin: 0;
+  color: var(--primary-dark);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.privacy-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 body.has-open-modal {
   overflow: hidden;
 }

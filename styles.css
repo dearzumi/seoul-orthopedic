@@ -538,6 +538,7 @@ h3 {
 .program-grid,
 .guide-grid,
 .notice-grid,
+.placeholder-grid,
 .connection-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -546,6 +547,7 @@ h3 {
 
 .program-card,
 .guide-card,
+.placeholder-card,
 .connection-card {
   padding: 28px;
   border: 1px solid var(--line);
@@ -555,6 +557,7 @@ h3 {
 }
 
 .program-card strong,
+.placeholder-card strong,
 .connection-card strong {
   color: var(--primary);
   font-size: 13px;
@@ -563,7 +566,8 @@ h3 {
 }
 
 .program-card ul,
-.guide-card ul {
+.guide-card ul,
+.placeholder-card ul {
   display: grid;
   gap: 10px;
   margin: 18px 0 0;
@@ -573,8 +577,19 @@ h3 {
 
 .program-card p,
 .guide-card p,
+.placeholder-card p,
 .connection-card p {
   color: var(--muted);
+}
+
+.placeholder-card {
+  background:
+    linear-gradient(180deg, rgba(238, 249, 248, 0.72), rgba(255, 255, 255, 0.92)),
+    white;
+}
+
+.placeholder-card li::marker {
+  color: var(--primary);
 }
 
 .guide-card.warning {
@@ -1698,6 +1713,7 @@ body.has-open-modal {
   .program-grid,
   .guide-grid,
   .notice-grid,
+  .placeholder-grid,
   .popup-actions,
   .connection-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1743,6 +1759,7 @@ body.has-open-modal {
   .program-grid,
   .guide-grid,
   .notice-grid,
+  .placeholder-grid,
   .popup-actions,
   .connection-grid {
     grid-template-columns: 1fr;

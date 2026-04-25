@@ -816,6 +816,27 @@ h3 {
   background: #fbfdfd;
 }
 
+.site-connection {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  background: white;
+  box-shadow: 0 14px 40px rgba(16, 32, 51, 0.06);
+}
+
+.site-connection p {
+  color: var(--muted);
+}
+
+.connection-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .app-install {
   display: grid;
   grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
@@ -998,7 +1019,8 @@ h3 {
   .hero,
   .split,
   .location-card,
-  .contact {
+  .contact,
+  .site-connection {
     grid-template-columns: 1fr;
   }
 

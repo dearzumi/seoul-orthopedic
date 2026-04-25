@@ -1,7 +1,41 @@
 (() => {
   const installStatus = document.querySelector("[data-install-status]");
   const installButton = document.querySelector("[data-install-button]");
+  const header = document.querySelector("[data-site-header]");
+  const navLinks = [...document.querySelectorAll(".nav a[href^='#']")];
+  const sections = navLinks
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
   let installPromptEvent;
+
+  const syncHeaderState = () => {
+    if (header) {
+      header.classList.toggle("is-scrolled", window.scrollY > 12);
+    }
+  };
+
+  const syncActiveNav = () => {
+    const current = [...sections]
+      .reverse()
+      .find((section) => section.getBoundingClientRect().top <= 120);
+
+    if (!current) {
+      return;
+    }
+
+    for (const link of navLinks) {
+      const isCurrent = link.getAttribute("href") === `#${current.id}`;
+      link.toggleAttribute("aria-current", isCurrent);
+    }
+  };
+
+  const syncUiState = () => {
+    syncHeaderState();
+    syncActiveNav();
+  };
+
+  syncUiState();
+  window.addEventListener("scroll", syncUiState, { passive: true });
 
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {

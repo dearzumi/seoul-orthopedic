@@ -138,6 +138,7 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">본문 바로가기</a>
     <header class="site-header">
       <a class="brand" href="#home" aria-label="서울정형외과 홈">
         <span class="brand-mark">SO</span>
@@ -147,32 +148,32 @@
         </span>
       </a>
       <nav class="nav" aria-label="주요 메뉴">
-        <a href="#services">진료 분야</a>
-        <a href="#programs">치료 프로그램</a>
-        <a href="#symptoms">증상별 안내</a>
-        <a href="#process">진료 과정</a>
-        <a href="#patient-guide">내원 안내</a>
-        <a href="#hours">진료시간</a>
-        <a href="#doctor">의료진</a>
-        <a href="#about">병원 소개</a>
-        <a href="#location">오시는 길</a>
-        <a href="#site-sync">앱·웹 연결</a>
-        <a href="#faq">FAQ</a>
-        <a href="#app">앱 설치</a>
+        <a href="#services" data-section-link>진료 분야</a>
+        <a href="#programs" data-section-link>치료 프로그램</a>
+        <a href="#symptoms" data-section-link>증상별 안내</a>
+        <a href="#process" data-section-link>진료 과정</a>
+        <a href="#patient-guide" data-section-link>내원 안내</a>
+        <a href="#hours" data-section-link>진료시간</a>
+        <a href="#doctor" data-section-link>의료진</a>
+        <a href="#about" data-section-link>병원 소개</a>
+        <a href="#location" data-section-link>오시는 길</a>
+        <a href="#site-sync" data-section-link>앱·웹 연결</a>
+        <a href="#faq" data-section-link>FAQ</a>
+        <a href="#app" data-section-link>앱 설치</a>
         <a class="nav-cta" href="#contact">예약 문의</a>
       </nav>
     </header>
 
     <main id="home">
       <section class="hero">
-        <div class="hero-content">
+        <div id="main-content" class="hero-content" tabindex="-1">
           <p class="eyebrow">SEOUL ORTHOPEDIC CLINIC</p>
           <h1>척추와 관절의 건강한 움직임, 서울정형외과가 함께합니다.</h1>
           <p class="hero-copy">
             정확한 진단부터 비수술 치료, 도수·재활 관리까지 환자분의 일상 회복을
             목표로 맞춤 진료 로드맵을 제안합니다.
           </p>
-          <div class="hero-actions">
+          <div class="hero-actions" aria-label="주요 예약 및 길찾기">
             <a class="button primary" href="#contact">예약 · 문의하기</a>
             <a class="button primary phone" href="tel:0555458275">055-545-8275</a>
             <a
@@ -183,7 +184,6 @@
             >
               네이버 지도 열기
             </a>
-          <a class="button ghost" href="tel:0555458275">055-545-8275 전화하기</a>
           </div>
         </div>
         <div class="hero-card" aria-label="서울정형외과 진료 핵심 가치">
